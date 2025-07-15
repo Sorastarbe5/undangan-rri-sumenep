@@ -92,5 +92,21 @@
       <p>&copy; 2025 RRI Sumenep | Email: rrisumenep@rri.co.id | Telp: (0328) 123-456</p>
     </div>
   </div>
+  <button onclick="downloadPDF()" style="margin: 20px; padding: 10px 20px;">Unduh Sebagai PDF</button>
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/html2pdf.js/0.10.1/html2pdf.bundle.min.js"></script>
+<script>
+  function downloadPDF() {
+    var element = document.body;
+    var opt = {
+      margin:       0.5,
+      filename:     'undangan_rri_sumenep.pdf',
+      image:        { type: 'jpeg', quality: 0.98 },
+      html2canvas:  { scale: 2 },
+      jsPDF:        { unit: 'in', format: 'letter', orientation: 'portrait' }
+    };
+    html2pdf().set(opt).from(element).save();
+  }
+</script>
 </body>
 </html>
